@@ -96,7 +96,7 @@ if (tbody)
   )
     .map(
       (b) =>
-        `<tr><td>${b.id}</td><td>${b.name}</td><td>${b.trainer}</td><td>${b.date || b.day}</td><td>${b.time}</td><td>${b.status}</td><td><a class="btn" href="404.html">View</a></td></tr>`,
+        `<tr><td>${b.id}</td><td>${b.name}</td><td>${b.trainer}</td><td>${b.date || b.day}</td><td>${b.time}</td><td>${b.status}</td><td><a class="btn" href="404.html?dashboard=${location.pathname.endsWith("admin-dashboard.html") ? "admin" : "member"}">View</a></td></tr>`,
     )
     .join("");
 if (window.Chart) {
