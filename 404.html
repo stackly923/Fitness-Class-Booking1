@@ -27,9 +27,21 @@
         </p>
         <div class="notfound-actions">
           <button class="btn btn-light" onclick="history.back()">Go Back</button>
-          <a class="btn btn-accent" href="index.html">Return Home</a>
+          <a class="btn btn-accent" href="index.html" id="return-link">Return Home</a>
         </div>
       </div>
     </main>
+    <script>
+      const dashboard = new URLSearchParams(location.search).get("dashboard");
+      const dashboardPages = {
+        member: "member-dashboard.html",
+        admin: "admin-dashboard.html",
+      };
+      if (Object.hasOwn(dashboardPages, dashboard)) {
+        const returnLink = document.getElementById("return-link");
+        returnLink.textContent = "Go to Dashboard";
+        returnLink.href = dashboardPages[dashboard];
+      }
+    </script>
   </body>
 </html>
