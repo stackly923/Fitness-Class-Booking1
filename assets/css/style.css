@@ -1546,18 +1546,31 @@ th {
 }
 .coach-stats {
   display: flex;
-  gap: 28px;
+  gap: 14px;
   flex-wrap: wrap;
   margin: 26px 0;
 }
 .coach-stats span {
   display: grid;
+  min-width: 112px;
+  padding: 14px 16px;
+  border: 1px solid rgba(75, 104, 91, 0.14);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.5);
   font-size: 0.75rem;
   color: var(--muted);
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    color 0.25s ease;
 }
 .coach-stats strong {
   font: 750 1.5rem Space Grotesk;
   color: var(--ink);
+  transition: color 0.25s ease;
 }
 .benefit-section {
   background: #e5e5da;
@@ -1890,6 +1903,28 @@ tbody tr:hover td:first-child {
 .coach-profile:hover {
   transform: translateY(-4px);
 }
+@media (hover: hover) {
+  .coach-stats span:hover {
+    transform: translateY(-6px) scale(1.03);
+    background: var(--white);
+    border-color: rgba(200, 255, 61, 0.9);
+    box-shadow: 0 18px 38px rgba(23, 34, 29, 0.14);
+    color: var(--forest);
+  }
+  .coach-stats span:hover strong {
+    color: #709047;
+  }
+}
+.coach-stats span:active {
+  transform: translateY(-2px) scale(0.98);
+  background: var(--lime);
+  border-color: var(--lime);
+  box-shadow: 0 10px 24px rgba(23, 34, 29, 0.12);
+  color: var(--ink);
+}
+.coach-stats span:active strong {
+  color: var(--ink);
+}
 .pill,
 .tag {
   transition:
@@ -1957,6 +1992,7 @@ details[open] {
   .benefit-list article,
   .stack-list a,
   .coach-profile,
+  .coach-stats span,
   .social-links a,
   .floating {
     transition: none !important;
