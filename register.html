@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Create Account | STACKLY Fitness</title>
+    <meta
+      name="description"
+      content="Create your STACKLY Fitness account and begin booking classes."
+    />
+    <link rel="icon" href="favicon.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <main class="auth">
+      <section class="auth-side register-auth-side">
+        <a class="back-home" href="index.html">Back to Home</a>
+        <a class="brand" href="index.html"><img class="brand-logo" src="assets/icons/stackly-logo-light.svg" alt="STACKLY Fitness" /></a>
+        <div class="auth-intro">
+          <h1>Your Stronger Routine.</h1>
+          <p>
+            A few details now, a whole schedule of expert-led movement ahead.
+          </p>
+        </div>
+        <a href="index.html">← Back to Home</a>
+      </section>
+      <section class="auth-form">
+        <form id="register-form" class="form-card">
+          <p class="eyebrow">Create account</p>
+          <h2>Start Your Fitness Journey</h2>
+          <p>
+            Create your STACKLY account to book classes, follow your activity
+            and manage your fitness routine.
+          </p>
+          <div class="field">
+            <label>Full Name</label
+            ><input
+              name="fullname"
+              required
+              placeholder="Enter your full name"
+            /><small class="error"></small>
+          </div>
+          <div class="field">
+            <label>Email</label
+            ><input
+              name="email"
+              type="email"
+              required
+              placeholder="you@example.com"
+            /><small class="error"></small>
+          </div>
+          <div class="field">
+            <label>Phone</label
+            ><input
+              name="phone"
+              required
+              placeholder="Enter your phone number"
+            /><small class="error"></small>
+          </div>
+          <div class="field">
+            <label>Password</label
+            ><input
+              name="password"
+              type="password"
+              required
+              placeholder="Create a password"
+            /><small class="error"></small>
+          </div>
+          <div class="field">
+            <label>Confirm Password</label
+            ><input
+              name="confirm"
+              type="password"
+              required
+              placeholder="Re-enter your password"
+            /><small class="error"></small>
+          </div>
+          <div class="field">
+            <label for="role">Role</label
+            ><select id="role" name="role" required>
+              <option value="" selected disabled hidden>Select role</option>
+              <option value="member">Member</option>
+              <option value="admin">Fitness Admin</option></select
+            ><small class="error"></small>
+          </div>
+          <div class="auth-actions register-actions">
+            <button class="btn btn-primary auth-submit">Create Account</button>
+            <a class="btn auth-secondary" href="signin.html">Sign In</a>
+          </div>
+        </form>
+      </section>
+    </main>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/auth.js"></script>
+  </body>
+</html>

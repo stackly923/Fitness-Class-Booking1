@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Contact STACKLY Fitness</title>
+    <meta
+      name="description"
+      content="Contact STACKLY Fitness about classes, memberships, trainers and booking support."
+    />
+    <link rel="icon" href="favicon.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="contact-page">
+    <div data-nav></div>
+    <main id="main">
+      <header class="page-hero">
+        <div class="container">
+          <p class="eyebrow">We are here to help</p>
+          <h1>Let’s Talk Training</h1>
+          <p>
+            Questions about classes, memberships or training? Our team is here
+            to help.
+          </p>
+        </div>
+      </header>
+      <section>
+        <div class="container split">
+          <div>
+            <h2>STACKLY Fitness</h2>
+            <p class="lead">
+              Speak with a real person who understands the schedule, the studio
+              and the training.
+            </p>
+            <div class="contact-card-grid" aria-label="Contact details">
+              <article class="contact-info-card card">
+                <span class="contact-info-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
+                <div>
+                  <h3>Email</h3>
+                  <a href="mailto:hello@stacklyfitness.com">hello@stacklyfitness.com</a>
+                </div>
+              </article>
+              <article class="contact-info-card card">
+                <span class="contact-info-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></span>
+                <div>
+                  <h3>Phone</h3>
+                  <a href="tel:+919876543210">+91 98765 43210</a>
+                </div>
+              </article>
+              <article class="contact-info-card card">
+                <span class="contact-info-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
+                <div>
+                  <h3>Bengaluru Branch</h3>
+                  <address>Evolve Studio, 4th Floor<br />Begur-Koppa Road, Bengaluru 560068</address>
+                </div>
+              </article>
+              <article class="contact-info-card card">
+                <span class="contact-info-icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></span>
+                <div>
+                  <h3>Hours</h3>
+                  <p>Mon-Sat, 5:30 AM-10:00 PM</p>
+                  <p>Sunday, 6:00 AM-8:00 PM</p>
+                </div>
+              </article>
+              <article class="contact-info-card contact-social-card card">
+                <span class="contact-info-icon"><i class="fa-solid fa-share-nodes" aria-hidden="true"></i></span>
+                <div>
+                  <h3>Social</h3>
+                  <nav class="contact-social-links" aria-label="Social media">
+                    <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i><span>Instagram</span></a>
+                    <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i><span>YouTube</span></a>
+                    <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i><span>LinkedIn</span></a>
+                    <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i><span>Facebook</span></a>
+                    <a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i><span>X</span></a>
+                  </nav>
+                </div>
+              </article>
+            </div>
+          </div>
+          <form id="contact-form" novalidate>
+            <p class="eyebrow">Contact</p>
+            <h2>Talk to Our Team</h2>
+            <div class="grid grid-2" style="grid-template-columns: 1fr 1fr">
+              <div class="field">
+                <label for="first">First Name *</label
+                ><input
+                  id="first"
+                  name="first"
+                  placeholder="Enter your first name"
+                  pattern="[A-Za-z]+"
+                  title="First name should contain only alphabets"
+                  required
+                /><small
+                  class="error"
+                ></small>
+              </div>
+              <div class="field">
+                <label for="last">Last Name *</label
+                ><input
+                  id="last"
+                  name="last"
+                  placeholder="Enter your last name"
+                  pattern="[A-Za-z]+"
+                  title="Last name should contain only alphabets"
+                  required
+                /><small
+                  class="error"
+                ></small>
+              </div>
+            </div>
+            <div class="field">
+              <label for="email">Email *</label
+              ><input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                maxlength="254"
+                placeholder="you@example.com"
+                title="Enter a valid email address"
+                required
+              /><small
+                class="error"
+              ></small>
+            </div>
+            <div class="field">
+              <label for="phone">Phone *</label
+              ><input
+                id="phone"
+                name="phone"
+                inputmode="numeric"
+                maxlength="10"
+                pattern="[0-9]{10}"
+                placeholder="9876543210"
+                title="Phone number should contain exactly 10 digits"
+                required
+              /><small class="error"></small>
+            </div>
+            <div class="field">
+              <label for="inquiry">Inquiry Type *</label
+              ><select id="inquiry" name="inquiry" data-placeholder="Select inquiry" required>
+                <option>Class Booking</option>
+                <option>Membership</option>
+                <option>Personal Training</option>
+                <option>Trainer Information</option>
+                <option>Booking Support</option>
+                <option>General Inquiry</option></select
+              ><small class="error"></small>
+            </div>
+            <div class="field">
+              <label for="preferred">Preferred Class</label
+              ><select id="preferred" name="preferred">
+                <option value="" selected disabled hidden>Select a class (optional)</option>
+                <option>Strength Foundations</option>
+                <option>Power HIIT</option>
+                <option>Morning Flow</option>
+                <option>Reformer Core</option>
+                <option>Cardio Engine</option>
+                <option>Boxing Conditioning</option>
+                <option>Ride &amp; Rhythm</option>
+                <option>Functional Circuit</option>
+                <option>Mobility Reset</option>
+                <option>Zumba Energy</option>
+                <option>Cross Training</option>
+                <option>Meditation Restore</option>
+                <option>Personal Training</option>
+              </select>
+              <small class="error"></small>
+            </div>
+            <div class="field">
+              <label for="message">Message *</label
+              ><textarea
+                id="message"
+                name="message"
+                placeholder="Tell us what you need help with"
+                rows="5"
+                required
+              ></textarea
+              ><small class="error"></small>
+            </div>
+            <button class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </section>
+      <section class="location-section">
+        <div class="container location-layout">
+          <article class="location-copy">
+            <p class="eyebrow">Bengaluru branch</p>
+            <h2>Visit STACKLY in Bengaluru</h2>
+            <p class="lead">
+              Meet our Bengaluru team at the STACKLY branch office. Use the map
+              for accurate directions before your visit.
+            </p>
+            <address class="location-address">
+              <strong>STACKLY Bengaluru Branch</strong>
+              <span>Evolve Studio, 4th Floor</span>
+              <span>Khata No. 10, Begur–Koppa Road</span>
+              <span>Suraksha Nagar, Bengaluru, Karnataka 560068</span>
+            </address>
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=Evolve+Studio+Begur+Koppa+Road+Bengaluru+560068"
+              target="_blank"
+              rel="noopener"
+              >Get Directions</a
+            >
+          </article>
+          <div class="location-map">
+            <iframe
+              src="https://www.google.com/maps?q=Evolve%20Studio%2C%20Begur%20Koppa%20Road%2C%20Bengaluru%20560068&output=embed"
+              title="STACKLY Bengaluru branch location"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div data-footer></div>
+    <script src="assets/js/main.js"></script>
+    <script>
+      document.querySelectorAll("#first, #last").forEach((input) => {
+        input.addEventListener("input", () => {
+          input.value = input.value.replace(/[^A-Za-z]/g, "");
+        });
+      });
+
+      document.querySelector("#phone").addEventListener("input", (e) => {
+        e.target.value = e.target.value.replace(/\D/g, "").slice(0, 10);
+      });
+
+      function clearContactForm() {
+        const form = document.querySelector("#contact-form");
+        if (!form) return;
+        form.reset();
+        form.querySelectorAll("[aria-invalid]").forEach((field) => {
+          field.removeAttribute("aria-invalid");
+        });
+        form.querySelectorAll(".error").forEach((error) => {
+          error.textContent = "";
+        });
+      }
+
+      window.addEventListener("pageshow", clearContactForm);
+
+      document
+        .querySelector("#contact-form")
+        .addEventListener("submit", (e) => {
+          e.preventDefault();
+          let ok = true;
+          const messages = {
+            first: "First name should contain only alphabets.",
+            last: "Last name should contain only alphabets.",
+            email: "Enter a valid email address, such as you@example.com.",
+            phone: "Phone number should contain exactly 10 digits.",
+          };
+
+          e.target.querySelectorAll("input, select, textarea").forEach((x) => {
+            let m = "";
+            x.value = x.value.trim();
+            if (x.required && !x.value) {
+              m = "Please fill in this required field.";
+            } else if (x.type === "email" && !validEmailAddress(x.value)) {
+              m = messages.email;
+            } else if (x.tagName === "SELECT" && !Array.from(x.options).some((option) => option.value === x.value)) {
+              m = "Please choose an option from the list.";
+            } else if (!x.checkValidity()) {
+              m = messages[x.name] || "Please enter a valid value.";
+            }
+            x.parentElement.querySelector(".error").textContent = m;
+            if (m) x.setAttribute("aria-invalid", "true");
+            else x.removeAttribute("aria-invalid");
+            if (m) ok = false;
+          });
+          if (!ok) {
+            const invalid = e.target.querySelector('[aria-invalid="true"]');
+            const dropdown = invalid?.nextElementSibling;
+            if (dropdown?.classList.contains("contact-dropdown")) {
+              dropdown.querySelector("summary").focus();
+            } else invalid?.focus();
+          }
+          if (ok) {
+            clearContactForm();
+            window.location.href = "404.html";
+          }
+        });
+    </script>
+    <script src="assets/js/contact-selects.js?v=3"></script>
+  </body>
+</html>
+

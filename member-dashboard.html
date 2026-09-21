@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Member Dashboard | STACKLY Fitness</title>
+    <meta
+      name="description"
+      content="Manage your STACKLY Fitness bookings, progress and membership."
+    />
+    <link rel="icon" href="favicon.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <main class="dashboard">
+      <button class="dashboard-menu-btn" type="button" aria-label="Open dashboard menu" aria-expanded="false" data-dashboard-menu>
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="dashboard-overlay" data-dashboard-overlay></div>
+      <aside class="sidebar">
+        <a class="brand dashboard-brand" href="#overview" data-dashboard-home>
+          <img src="assets/icons/stackly-logo-light.svg" alt="STACKLY Fitness logo" />
+        </a>
+        <nav class="side-links">
+          <button data-panel="overview" class="active">
+            <i class="fa-solid fa-gauge-high"></i><span>Overview</span></button
+          ><button data-panel="bookings" class="">
+            <i class="fa-solid fa-calendar-check"></i><span>My Bookings</span></button
+          ><button data-panel="schedule" class="">
+            <i class="fa-solid fa-calendar-days"></i><span>Schedule</span></button
+          ><button data-panel="progress" class="">
+            <i class="fa-solid fa-chart-line"></i><span>Progress</span></button
+          ><button data-panel="membership" class="">
+            <i class="fa-solid fa-id-card"></i><span>Membership</span></button
+          ><button data-panel="profile" class="">
+            <i class="fa-solid fa-user"></i><span>Profile</span></button
+          ><button data-logout>
+            <i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></button>
+        </nav>
+      </aside>
+      <div class="dash-main">
+        <dl class="dashboard-account" aria-label="Signed-in account">
+          <div><dt>Email</dt><dd data-account-email>Not signed in</dd></div>
+          <div><dt>Role</dt><dd data-account-role>Not assigned</dd></div>
+        </dl>
+        <section id="overview" class="tab-panel active">
+          <div class="dash-top">
+            <div>
+              <p class="eyebrow">Member overview</p>
+              <h2>Good Morning, Alex</h2>
+            </div>
+            <span class="pill">Active Membership</span>
+          </div>
+          <div class="dash-grid">
+            <div class="kpi">
+              <span>Upcoming Sessions</span><strong>4</strong>
+            </div>
+            <div class="kpi">
+              <span>Sessions Completed</span><strong>38</strong>
+            </div>
+            <div class="kpi">
+              <span>Training Hours</span><strong>42.5</strong>
+            </div>
+            <div class="kpi">
+              <span>Current Streak</span><strong>12 days</strong>
+            </div>
+            <div class="kpi">
+              <span>Active Bookings</span><strong>4</strong>
+            </div>
+            <div class="kpi">
+              <span>Membership</span><strong>Active</strong>
+            </div>
+          </div>
+          <br />
+          <div class="split" style="gap: 16px">
+            <article class="card" style="background: #4b685b; color: white">
+              <span class="pill lime">Next session</span>
+              <h2>Power HIIT</h2>
+              <p>
+                Maya Thompson · Tomorrow · 7:00 AM<br />45 minutes · Studio A
+              </p>
+              <a class="btn btn-accent" href="404.html">
+                View Booking
+              </a>
+              <a class="btn" href="404.html">
+                Cancel Booking
+              </a>
+            </article>
+            <div class="chart-box">
+              <h3>Weekly Activity</h3>
+              <canvas data-chart="line" data-label="Training sessions"></canvas>
+            </div>
+          </div>
+        </section>
+        <section id="bookings" class="tab-panel">
+          <div class="dash-top">
+            <div>
+              <p class="eyebrow">Reservations</p>
+              <h2>My Bookings</h2>
+            </div>
+            <span class="pill">4 active</span>
+          </div>
+          <div class="dash-grid">
+            <div class="kpi"><span>This Week</span><strong>4</strong></div>
+            <div class="kpi"><span>Waitlisted</span><strong>1</strong></div>
+            <div class="kpi"><span>Cancelled</span><strong>0</strong></div>
+          </div>
+          <br />
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Booking</th><th>Class</th><th>Trainer</th><th>Date</th><th>Time</th><th>Status</th><th>Action</th></tr>
+              </thead>
+              <tbody id="booking-rows"></tbody>
+            </table>
+          </div>
+          <br />
+          <div class="grid grid-3">
+            <article class="card"><span class="pill">Today</span><h3>Recovery reminder</h3><p class="muted">Keep ten minutes free after class for stretching and hydration.</p></article>
+            <article class="card"><span class="pill">Check-in</span><h3>Arrive early</h3><p class="muted">Reach the studio 10 minutes before start time to confirm your spot.</p></article>
+            <article class="card"><span class="pill">Policy</span><h3>Cancellation window</h3><p class="muted">Cancel at least 3 hours before class to keep the session credit.</p></article>
+          </div>
+        </section>
+        <section id="schedule" class="tab-panel">
+          <div class="dash-top"><div><p class="eyebrow">Training plan</p><h2>Schedule</h2></div><span class="pill">Balanced week</span></div>
+          <div class="grid grid-3">
+            <article class="card"><span class="pill">Monday</span><h3>Strength Foundations</h3><p class="muted">Lower-body strength, posture work and core control.</p></article>
+            <article class="card"><span class="pill">Wednesday</span><h3>Power HIIT</h3><p class="muted">Intervals, sled pushes and conditioning blocks.</p></article>
+            <article class="card"><span class="pill">Saturday</span><h3>Morning Flow</h3><p class="muted">Mobility, breathing and guided recovery work.</p></article>
+          </div>
+          <br />
+          <article class="card"><h3>Coach note</h3><p>Your week is set up with strength first, conditioning midweek and recovery at the end. Keep one rest day between intense sessions.</p></article>
+        </section>
+        <section id="progress" class="tab-panel">
+          <h2>Your Progress</h2>
+          <div class="grid grid-3">
+            <div class="chart-box">
+              <h3>Monthly Attendance</h3>
+              <canvas data-chart="line"></canvas>
+            </div>
+            <div class="chart-box">
+              <h3>Class Preference</h3>
+              <canvas data-chart="doughnut"></canvas>
+            </div>
+            <div class="chart-box">
+              <h3>Training Hours</h3>
+              <canvas data-chart="line"></canvas>
+            </div>
+          </div>
+        </section>
+        <section id="membership" class="tab-panel">
+          <div class="dash-top"><div><p class="eyebrow">Plan details</p><h2>Active Membership</h2></div><span class="pill">Renews soon</span></div>
+          <article class="card"><span class="pill">Current Plan</span><h2>Active</h2><p>Renews October 15, 2026. 8 of 12 sessions used.</p><progress value="8" max="12" style="width: 100%"></progress><br /><br /><a class="btn btn-primary" href="404.html">Upgrade Membership</a></article>
+          <br />
+          <div class="dash-grid"><div class="kpi"><span>Sessions Left</span><strong>4</strong></div><div class="kpi"><span>Guest Passes</span><strong>2</strong></div><div class="kpi"><span>Freeze Days</span><strong>10</strong></div></div>
+          <br />
+          <div class="grid grid-3">
+            <article class="card"><h3>Included access</h3><p class="muted">Group classes, open gym hours and recovery lounge access.</p></article>
+            <article class="card"><h3>Billing status</h3><p class="muted">Auto-renewal is enabled with the saved card ending 4288.</p></article>
+            <article class="card"><h3>Best next step</h3><p class="muted">Upgrade before renewal to add unlimited bookings.</p></article>
+          </div>
+        </section>
+        <section id="profile" class="tab-panel">
+          <div class="dash-top"><div><p class="eyebrow">Member profile</p><h2>Profile</h2></div><span class="pill">Goal focused</span></div>
+          <div class="card"><p><strong>Alex Morgan</strong><br />alex@example.com<br />Goal: Build Strength<br />Preferred studio: Studio A</p><a class="btn" href="404.html">Edit Profile</a></div>
+          <br />
+          <div class="grid grid-3">
+            <article class="card"><h3>Training goal</h3><p class="muted">Build strength while improving weekly consistency.</p></article>
+            <article class="card"><h3>Preferred time</h3><p class="muted">Morning sessions between 7:00 AM and 9:00 AM.</p></article>
+            <article class="card"><h3>Health notes</h3><p class="muted">Low-impact warmups recommended before heavy lifts.</p></article>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+  </body>
+</html>

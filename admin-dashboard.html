@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Fitness Admin | STACKLY Fitness</title>
+    <meta
+      name="description"
+      content="STACKLY Fitness operations dashboard for bookings, classes, trainers and members."
+    />
+    <link rel="icon" href="favicon.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <main class="dashboard">
+      <button class="dashboard-menu-btn" type="button" aria-label="Open dashboard menu" aria-expanded="false" data-dashboard-menu>
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="dashboard-overlay" data-dashboard-overlay></div>
+      <aside class="sidebar">
+        <a class="brand dashboard-brand" href="#overview" data-dashboard-home>
+          <img src="assets/icons/stackly-logo-light.svg" alt="STACKLY Fitness Admin logo" />
+        </a>
+        <nav class="side-links">
+          <button data-panel="overview" class="active">
+            <i class="fa-solid fa-gauge-high"></i><span>Overview</span></button
+          ><button data-panel="bookings" class="">
+            <i class="fa-solid fa-calendar-check"></i><span>Bookings</span></button
+          ><button data-panel="members" class="">
+            <i class="fa-solid fa-users"></i><span>Members</span></button
+          ><button data-panel="schedule" class="">
+            <i class="fa-solid fa-calendar-days"></i><span>Schedule</span></button
+          ><button data-panel="analytics" class="">
+            <i class="fa-solid fa-chart-pie"></i><span>Analytics</span></button
+          ><button data-panel="memberships" class="">
+            <i class="fa-solid fa-id-card"></i><span>Memberships</span></button
+          ><button data-logout>
+            <i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></button>
+        </nav>
+      </aside>
+      <div class="dash-main">
+        <dl class="dashboard-account" aria-label="Signed-in account">
+          <div><dt>Email</dt><dd data-account-email>Not signed in</dd></div>
+          <div><dt>Role</dt><dd data-account-role>Not assigned</dd></div>
+        </dl>
+        <section id="overview" class="tab-panel active">
+          <div class="dash-top">
+            <div>
+              <p class="eyebrow">Operations</p>
+              <h2>Fitness Overview</h2>
+            </div>
+            <span class="pill">Tuesday · Live</span>
+          </div>
+          <div class="dash-grid">
+            <div class="kpi">
+              <span>Total Members</span><strong>12,480</strong>
+            </div>
+            <div class="kpi">
+              <span>Today's Bookings</span><strong>284</strong>
+            </div>
+            <div class="kpi">
+              <span>Active Classes</span><strong>26</strong>
+            </div>
+            <div class="kpi"><span>Trainers</span><strong>35</strong></div>
+            <div class="kpi">
+              <span>Weekly Sessions</span><strong>187</strong>
+            </div>
+            <div class="kpi"><span>Attendance</span><strong>91%</strong></div>
+            <div class="kpi">
+              <span>Membership Revenue</span><strong>₹18.4L</strong>
+            </div>
+            <div class="kpi"><span>Cancellations</span><strong>14</strong></div>
+          </div>
+          <br />
+          <div class="grid grid-3">
+            <div class="chart-box">
+              <h3>Booking Growth</h3>
+              <canvas data-chart="line"></canvas>
+            </div>
+            <div class="chart-box">
+              <h3>Attendance Trends</h3>
+              <canvas data-chart="line"></canvas>
+            </div>
+            <div class="chart-box">
+              <h3>Membership Mix</h3>
+              <canvas data-chart="doughnut"></canvas>
+            </div>
+          </div>
+        </section>
+        <section id="bookings" class="tab-panel">
+          <div class="dash-top"><div><p class="eyebrow">Booking operations</p><h2>Bookings</h2></div><span class="pill">284 today</span></div>
+          <div class="dash-grid">
+            <div class="kpi"><span>Confirmed</span><strong>248</strong></div>
+            <div class="kpi"><span>Waitlisted</span><strong>22</strong></div>
+            <div class="kpi"><span>Needs Review</span><strong>14</strong></div>
+          </div>
+          <br />
+          <div class="toolbar"><div class="field"><label>Search</label><input placeholder="Member or booking" /></div><div class="field"><label>Status</label><select><option>All statuses</option><option>Confirmed</option><option>Waitlisted</option><option>Needs review</option></select></div></div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Booking</th><th>Member</th><th>Class</th><th>Trainer</th><th>Date</th><th>Time</th><th>Status</th><th>Notes</th></tr></thead>
+              <tbody>
+                <tr><td>B-2048</td><td>Arjun Mehta</td><td>Power HIIT</td><td>Maya Thompson</td><td>15 Sep</td><td>07:00</td><td><span class="pill">Confirmed</span></td><td>First row</td></tr>
+                <tr><td>B-2049</td><td>Nisha Rao</td><td>Morning Flow</td><td>Sofia Bennett</td><td>15 Sep</td><td>08:30</td><td><span class="pill">Confirmed</span></td><td>Mat reserved</td></tr>
+                <tr><td>B-2050</td><td>Dev Patel</td><td>Strength Foundations</td><td>Ethan Parker</td><td>15 Sep</td><td>18:00</td><td><span class="pill">Waitlisted</span></td><td>Notify if seat opens</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <br />
+          <div class="grid grid-3"><article class="card"><h3>Front desk focus</h3><p class="muted">Confirm late arrivals and clear waitlist changes before the evening rush.</p></article><article class="card"><h3>Capacity note</h3><p class="muted">Studio A is close to full during 7:00 AM and 6:00 PM blocks.</p></article><article class="card"><h3>Follow up</h3><p class="muted">Contact members with repeated no-shows before renewal offers go out.</p></article></div>
+        </section>
+        <section id="members" class="tab-panel">
+          <div class="dash-top"><div><p class="eyebrow">Member management</p><h2>Members</h2></div><span class="pill">12,480 total</span></div>
+          <div class="dash-grid"><div class="kpi"><span>New This Month</span><strong>624</strong></div><div class="kpi"><span>At Risk</span><strong>86</strong></div><div class="kpi"><span>High Activity</span><strong>1,240</strong></div></div>
+          <br />
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Member</th><th>Email</th><th>Membership</th><th>Sessions</th><th>Last Visit</th><th>Joined</th><th>Status</th><th>Action Needed</th></tr></thead>
+              <tbody>
+                <tr><td>Arjun Mehta</td><td>arjun@example.com</td><td>Active</td><td>38</td><td>Yesterday</td><td>Jan 2026</td><td><span class="pill">Active</span></td><td>Offer strength plan</td></tr>
+                <tr><td>Nisha Rao</td><td>nisha@example.com</td><td>Unlimited</td><td>54</td><td>Today</td><td>Nov 2025</td><td><span class="pill">Active</span></td><td>Invite to referral program</td></tr>
+                <tr><td>Kiran Shah</td><td>kiran@example.com</td><td>Basic</td><td>6</td><td>12 days ago</td><td>Jul 2026</td><td><span class="pill">Review</span></td><td>Send reactivation note</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <br />
+          <div class="grid grid-3"><article class="card"><h3>Retention focus</h3><p class="muted">Members with fewer than two visits in 14 days need a coach check-in.</p></article><article class="card"><h3>Upgrade signal</h3><p class="muted">Frequent bookers are good candidates for unlimited plans.</p></article><article class="card"><h3>Service note</h3><p class="muted">Keep injury notes updated before assigning high-intensity classes.</p></article></div>
+        </section>
+        <section id="schedule" class="tab-panel">
+          <div class="dash-top"><div><p class="eyebrow">Studio calendar</p><h2>Schedule</h2></div><a class="btn btn-primary" href="404.html">Add Session</a></div>
+          <div class="dash-grid"><div class="kpi"><span>Today Sessions</span><strong>12</strong></div><div class="kpi"><span>Open Seats</span><strong>34</strong></div><div class="kpi"><span>Peak Block</span><strong>6 PM</strong></div></div>
+          <br />
+          <div class="grid grid-3">
+            <div class="card"><span class="pill">Studio A</span><h3>07:00 Power HIIT</h3><p>Trainer assigned. Capacity 18, booked 16.</p><a class="btn" href="404.html">Edit Session</a></div>
+            <div class="card"><span class="pill">Studio B</span><h3>08:30 Morning Flow</h3><p>Trainer assigned. Capacity 20, booked 12.</p><a class="btn" href="404.html">Edit Session</a></div>
+            <div class="card"><span class="pill">Studio A</span><h3>18:00 Strength Foundations</h3><p>Trainer assigned. Capacity 16, booked 15.</p><a class="btn" href="404.html">Edit Session</a></div>
+          </div>
+          <br />
+          <article class="card"><h3>Scheduling guidance</h3><p class="muted">Add one more conditioning class after 6:00 PM if waitlist count crosses 12 members.</p></article>
+        </section>
+        <section id="analytics" class="tab-panel">
+          <h2>Analytics</h2>
+          <div class="grid grid-3">
+            <div class="chart-box">
+              <h3>Class Popularity</h3>
+              <canvas data-chart="doughnut"></canvas>
+            </div>
+            <div class="chart-box">
+              <h3>Peak Booking Hours</h3>
+              <canvas data-chart="line"></canvas>
+            </div>
+            <div class="chart-box">
+              <h3>Trainer Performance</h3>
+              <canvas data-chart="line"></canvas>
+            </div>
+            <div class="chart-box">
+              <h3>Monthly Revenue</h3>
+              <canvas data-chart="line"></canvas>
+            </div>
+          </div>
+        </section>
+        <section id="memberships" class="tab-panel">
+          <div class="dash-top"><div><p class="eyebrow">Revenue and plans</p><h2>Membership Management</h2></div><span class="pill">Healthy growth</span></div>
+          <div class="dash-grid"><div class="kpi"><span>Active Memberships</span><strong>9,140</strong></div><div class="kpi"><span>New Members</span><strong>624</strong></div><div class="kpi"><span>Expiring Soon</span><strong>218</strong></div><div class="kpi"><span>Upgrades</span><strong>142</strong></div><div class="kpi"><span>Revenue</span><strong>Rs 18.4L</strong></div><div class="kpi"><span>Renewal Rate</span><strong>87%</strong></div></div>
+          <br />
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Plan</th><th>Members</th><th>Monthly Revenue</th><th>Renewals Due</th><th>Upgrade Target</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>Basic</td><td>3,280</td><td>Rs 6.2L</td><td>96</td><td>220</td><td><span class="pill">Stable</span></td></tr>
+                <tr><td>Active</td><td>4,110</td><td>Rs 8.7L</td><td>88</td><td>310</td><td><span class="pill">Growing</span></td></tr>
+                <tr><td>Unlimited</td><td>1,750</td><td>Rs 3.5L</td><td>34</td><td>120</td><td><span class="pill">Premium</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <br />
+          <div class="grid grid-3"><article class="card"><h3>Renewal action</h3><p class="muted">Send reminders 7 days before expiry with a trainer recommendation.</p></article><article class="card"><h3>Upgrade action</h3><p class="muted">Offer unlimited plans to members booking more than three classes weekly.</p></article><article class="card"><h3>Pause requests</h3><p class="muted">Review freeze requests within 24 hours to keep satisfaction high.</p></article></div>
+        </section>
+      </div>
+    </main>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+  </body>
+</html>
